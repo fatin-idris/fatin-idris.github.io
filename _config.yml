@@ -127,7 +127,7 @@ lemon theme:
 
 collections:
   projects:
-    output: true
+    output: false # <-- Make sure this is 'false', later change it back to 'true'
     permalink: /projects/:path/
 
 
