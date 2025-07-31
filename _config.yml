@@ -33,7 +33,7 @@ external-links:    # input only your own url slug. The icons with missing entrie
   linkedin: fatin-04-20    # https://www.linkedin.com/in/fatin-04-20 
   email: norfatinhazirahmohdidris@yahoo.com            # Replace with your actual email address
   github: fatin-idris    # https://github.com/fatin-idris 
-  stackoverflow: test      # https://stackoverflow.com/users/{your url slug}
+  stackoverflow:       # https://stackoverflow.com/users/{your url slug}
   medium:            # https://medium.com/@{your url slug} 
   x-twitter:   # https://x.com/{your url slug} 
   threads:            # https://threads.net/@{your url slug} 
