@@ -47,16 +47,13 @@ external-links:    # input only your own url slug. The icons with missing entrie
 skills:
   - category: 3D Modeling
     tools:
-    - Solidworks
+    - AutoCAD
     - Fusion 360 (Autodesk)
-    - Blender (for complex shapes or animations)
     - Siemens NX
     - Inventor (Autodesk)
   - category: Prototyping
     tools:
     - CNC
-    - Laser Cutting
-    - Water Jet Cutting
     - Arduino / Raspberry Pi
     - Breadboarding for circuit testing
   - category: Design Standards / Practices
@@ -66,7 +63,6 @@ skills:
   - category: Problem Solving / Risk Management
     tools:
     - Root Cause Analysis (e.g., 5 Whys, Fishbone Diagram)
-    - DFMEA / PFMEA 
     - Six Sigma methodologies
 
 
