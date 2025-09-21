@@ -300,6 +300,26 @@
         justify-content: space-between;
         align-items: center;
       }
+
+      /* NEW: Style the dropdown menu to match the navbar background */
+      .dropdown-menu {
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+      }
+
+      .dropdown-item {
+        color: var(--text-color) !important;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.08
+        ); /* A subtle highlight on hover */
+      }
     </style>
   </head>
   <body>
@@ -419,7 +439,7 @@
           class="col-lg-12 col-md-12 col-sm-12 col-xl-4 mb-4 mb-lg-0 summary-col d-flex flex-column justify-content-center"
         >
           <div class="card p-4 d-flex flex-column">
-            <h4 class="card-title text-bold">Summary</h4>
+            <h4 class="card-title text-bold">Career Objective</h4>
             <div class="d-flex flex-column justify-content-center flex-grow-1">
               <p class="text-justify fs-6 fs-xl-4 mt-3">
                 Mechanical Engineering graduate with hands-on experience in
@@ -1013,7 +1033,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <div class="card p-4 text-center">
-            <h4 class="card-title text-bold mb-4">Get in Touch with Me</h4>
+            <h4 class="card-title text-bold mb-4">Get in Touch!</h4>
             <p class="mb-4">
               Feel free to reach out to me on my social media accounts below.
             </p>
