@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Norfatin Hazirah - Mechanical Engineer</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      xintegrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      xintegrity="sha512-Fo3rlrZj/k7Tj+A4w6/k9p/1W/88/p+p/a9W0zL15jL4n8fA7FzM8P3d2x9G9R5A/m7D/8Fw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      /* New CSS variables for a static dark theme */
+      :root {
+        --bg-primary: #92a5fc; /* A dark, deep blue-black */
+        --bg-secondary: #121212; /* A blue-purple for cards */
+        --text-color: #fdfeff; /* Cool light grey for body text */
+        --muted-text: #b5b9bf; /* Soft grey for secondary text */
+        --accent-color: #00e6e6; /* Bright, electric cyan */
+        --border-color: #2a3a50; /* A dark blue-grey for borders */
+        --shadow-color: rgba(0, 0, 0, 0.4); /* A dark shadow */
+        --glow-color: rgba(
+          0,
+          230,
+          230,
+          0.6
+        ); /* Glow color for actionable items */
+        --toast-bg-color: #a82424; /* A red for the toast background */
+      }
+      body {
+        background-color: var(--bg-primary);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        color: var(--text-color);
+        padding-top: 56px;
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+      html {
+        scroll-padding-top: 56px;
+      }
+      /* Updated styles for navbar and footer to use the same background color from a variable */
+      .navbar,
+      .footer-section {
+        background-color: var(--bg-secondary);
+        color: var(--text-color);
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+      /* New style to ensure navbar text is visible */
+      .navbar-brand,
+      .nav-link,
+      .dropdown-menu a,
+      .d-flex .btn-link {
+        color: white !important;
+      }
+      /* New style to ensure the footer text is visible */
+      .footer-section {
+        padding: 2rem 0;
+      }
+      .header-section {
+        background-color: #252426;
+        color: var(--text-color);
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+      .profile-img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border: 4px solid var(--text-color);
+        border-radius: 50%;
+      }
+      .list-group-item {
+        background-color: transparent !important;
+        border-color: var(--border-color) !important;
+        color: var(--text-color) !important; /* Ensure text is visible */
+      }
+      /* Updated to use var(--text-color) for better contrast */
+      .list-group-item h5 {
+        font-weight: 600;
+        color: var(--text-color) !important;
+      }
+      .list-group-item h6 {
+        color: var(--text-color) !important; /* Updated for better visibility */
+      }
+      .list-group-item small {
+        color: var(--text-color) !important; /* Updated for better visibility */
+      }
+      .card {
+        background-color: #261f34;
+        color: var(--text-color);
+        border-radius: 1rem;
+        box-shadow: 0 0.5rem 1rem var(--shadow-color);
+        border: none;
+        transition: background-color 0.5s ease, box-shadow 0.5s ease;
+      }
+      /* Explicitly set header colors inside cards */
+      .card h4.card-title,
+      .card h5.card-title {
+        color: var(--text-color);
+      }
+      .project-card,
+      .skills-card-link {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+      .project-card:hover,
+      .skills-card-link:hover,
+      .cursor-pointer:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem var(--shadow-color),
+          0 0 1rem var(--glow-color);
+        cursor: pointer;
+      }
+      .text-bold {
+        font-weight: bold;
+      }
+      .progress-bar-ux {
+        background-color: #03baa5;
+      }
+      .progress-bar-tools {
+        background-color: #ff7043;
+      }
+      .progress-bar-mechanical {
+        background-color: #905bfc;
+      }
+      .progress-bar-soft {
+        background-color: #f83465;
+      }
+      .contact-link,
+      .more-link {
+        text-decoration: none;
+        color: var(--accent-color);
+        transition: color 0.2s ease;
+      }
+      .contact-link:hover,
+      .more-link:hover {
+        color: #00ffff;
+        text-decoration: underline;
+      }
+      .highlight {
+        background-color: #ffd700;
+        padding: 2px;
+        border-radius: 4px;
+        animation: highlight-flicker 1.5s ease-in-out forwards;
+      }
+      @keyframes highlight-flicker {
+        0% {
+          background-color: #ffd700;
+          box-shadow: 0 0 5px #ffd700;
+        }
+        25% {
+          background-color: transparent;
+          box-shadow: none;
+        }
+        50% {
+          background-color: #ffd700;
+          box-shadow: 0 0 10px #ffd700;
+        }
+        75% {
+          background-color: transparent;
+          box-shadow: none;
+        }
+        100% {
+          background-color: transparent;
+          box-shadow: none;
+        }
+      }
+      #searchMessage {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--bg-secondary);
+        color: var(--text-color);
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 1rem;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+      #searchMessage.show {
+        opacity: 1;
+        visibility: visible;
+      }
+      @media (min-width: 992px) {
+        .summary-col {
+          width: 30% !important;
+          flex: 0 0 auto !important;
+        }
+        .education-col {
+          width: 70% !important;
+          flex: 0 0 auto !important;
+        }
+      }
+      .modal-hero-img-container {
+        width: 100%;
+        height: 400px;
+        background-color: var(--border-color);
+        object-fit: contain;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--muted-text);
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+      .modal-hero-img-container img {
+        width: auto;
+        height: 400px;
+        object-fit: contain;
+      }
+      /* NEW: Styles for the modal title to be visible on dark background */
+      .modal-header .modal-title {
+        color: white;
+      }
+      .modal-header .btn-close {
+        filter: invert(1) grayscale(100%) brightness(200%);
+      }
+      .overview-list li {
+        margin-bottom: 1rem;
+      }
+      .skill-tag {
+        display: inline-block;
+        background-color: #383446;
+        color: var(--text-color);
+        padding: 0.3rem 0.75rem;
+        border-radius: 1rem;
+        font-size: 0.8rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        transition: background-color 0.5s ease;
+      }
+      .card-img-top {
+        height: 300px;
+        object-fit: cover;
+      }
+      .collapse {
+        transition: height 0.35s ease;
+      }
+      .cursor-pointer {
+        cursor: pointer;
+        border-radius: 0.5rem;
+        padding: 0.15rem;
+        transition: background-color 0.18s ease;
+      }
+      .cursor-pointer:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+      .custom-tooltip {
+        --bs-tooltip-bg: #000000;
+        --bs-tooltip-color: #fff;
+      }
+      .calendly-toast {
+        background-color: var(--toast-bg-color);
+        color: var(--text-color);
+        width: fit-content;
+        transition: background-color 0.5s ease, color 0.5s ease;
+        box-shadow: 0 0 1rem var(--glow-color) !important;
+      }
+      /* Fixed the color of the close button and the link text to be white for contrast */
+      .calendly-toast .btn-close-white {
+        background: transparent
+          url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e")
+          center/1em auto no-repeat;
+        filter: brightness(0) invert(1);
+      }
+      /* Removed the underline from the entire link */
+      .calendly-toast a {
+        text-decoration: none;
+        color: white;
+      }
+      .toast-container {
+        bottom: 75px !important;
+      }
+
+      /* Added CSS to ensure the hamburger icon is visible */
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      }
+
+      /* New class to ensure the project card header has a consistent height */
+      .project-card-header {
+        min-height: 4.5rem; /* Ensures consistent spacing for titles of varying lengths */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Norfatin Hazirah</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="asset/doc/Resume.pdf" target="_blank"
+                >Resume</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                More
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#education">Education</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#experience">Experience</a>
+                </li>
+                <li><a class="dropdown-item" href="#projects">Project</a></li>
+                <li>
+                  <a class="dropdown-item" href="#skills">Skills</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#contact">Contact</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search" id="searchForm">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              id="searchInput"
+            />
+            <button class="btn btn-link text-decoration-none" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Section with profile image and summary -->
+    <header
+      class="header-section text-center text-md-start py-5 position-relative"
+    >
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-3 text-center">
+            <img
+              src="asset/profile/D.png"
+              class="rounded-circle img-fluid profile-img"
+              alt="Profile Picture"
+            />
+          </div>
+          <div class="col-md-9 mt-4 mt-md-0">
+            <h1 class="display-4 text-bold">Norfatin Hazirah Mohd Idris</h1>
+            <p class="lead">Mechanical Engineer</p>
+            <hr class="my-2" style="background-color: var(--border-color)" />
+            <div
+              class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start"
+            >
+              <span class="me-md-3 mb-2 mb-md-0"
+                ><i class="fas fa-map-marker-alt"></i> Johor Bahru, Johor</span
+              >
+              <span>
+                <i class="fas fa-envelope"></i>
+                <a
+                  href="mailto:norfatinhazirahmohdidris@yahoo.com"
+                  target="_blank"
+                  class="contact-link"
+                >
+                  norfatinhazirahmohdidris@yahoo.com
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Container for the portfolio sections -->
+    <main class="container py-5">
+      <!-- Row for Summary and Education, side-by-side and equal height on larger screens -->
+      <div class="row mb-4">
+        <div
+          class="col-lg-12 col-md-12 col-sm-12 col-xl-4 mb-4 mb-lg-0 summary-col d-flex flex-column justify-content-center"
+        >
+          <div class="card p-4 d-flex flex-column">
+            <h4 class="card-title text-bold">Career Objective</h4>
+            <div class="d-flex flex-column justify-content-center flex-grow-1">
+              <p class="text-justify fs-6 fs-xl-4 mt-3">
+                Creative and detail-oriented professional with a strong
+                foundation in mechanical engineering and hands-on training in UX
+                design. Proven ability to apply user-focused thinking to complex
+                engineering processes, with skills in problem-solving, research,
+                and documentation. Eager to leverage technical background and
+                user experience principles to design intuitive and effective
+                products.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-8 education-col">
+          <div class="card p-4 h-100" id="education">
+            <h4 class="card-title text-bold">Education</h4>
+            <ul class="list-group list-group-flush mt-3">
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                  <h5>TalentLabs K-Youth Development Programme</h5>
+                  <!-- The `text-muted` class has been removed for better visibility. -->
+                  <small class="text-nowrap">Aug 2025 - Present</small>
+                </div>
+                <!-- The `text-secondary` class has been removed for better visibility. -->
+                <h6>UX Design</h6>
+                <ul class="mt-2" style="list-style-type: disc">
+                  <li>
+                    Hands-on training in UX principles, Figma prototyping, and
+                    user research techniques.
+                  </li>
+                  <li>
+                    Built responsive UI concepts with HTML, CSS, and Bootstrap.
+                  </li>
+                  <li>
+                    Applied design insights using Google Analytics and Tableau.
+                  </li>
+                </ul>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                  <h5>Universiti Teknologi Malaysia (MJIIT)</h5>
+                  <!-- The `text-muted` class has been removed for better visibility. -->
+                  <small class="text-nowrap">Mar 2025</small>
+                </div>
+                <!-- The `text-secondary` class has been removed for better visibility. -->
+                <h6>
+                  Bachelor in Mechanical Precision Engineering with Honours
+                </h6>
+                <p class="mb-1">
+                  Final Year Project: Underwater Colour Correction for Enhanced
+                  Object Detection
+                </p>
+                <p class="mb-0">CGPA: 3.12/4.00</p>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                  <h5>Politeknik Ibrahim Sultan</h5>
+                  <!-- The `text-muted` class has been removed for better visibility. -->
+                  <small class="text-nowrap">Jan 2021</small>
+                </div>
+                <!-- The `text-secondary` class has been removed for better visibility. -->
+                <h6>Diploma in Mechanical Engineering</h6>
+                <p class="mb-1">
+                  Final Year Project: Escalera Estable – Designed an ergonomic
+                  ladder with levelling and safety features for use on edges and
+                  uneven surfaces.
+                </p>
+                <p class="mb-0">CGPA: 3.75/4.00</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- New row for the expanded Experience section -->
+      <div class="row mb-4">
+        <div class="col-lg-12">
+          <div class="card p-4 mb-4" id="experience">
+            <h4 class="card-title text-bold">Experience</h4>
+            <ul class="list-group list-group-flush mt-3">
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                  <h5>VS Industry Sdn. Bhd.</h5>
+                  <!-- The `text-muted` class has been removed for better visibility. -->
+                  <small class="text-nowrap">Jul 2024-Oct 2024</small>
+                </div>
+                <!-- The `text-secondary` class has been removed for better visibility. -->
+                <h6>Quality Engineering Intern</h6>
+                <ul class="mt-2" style="list-style-type: disc">
+                  <li>
+                    Performed over 150+ product inspections with visual and
+                    dimensional evaluation, enhancing attention to detail and
+                    user-centric quality standards.
+                  </li>
+                  <li>
+                    Documented quality outcomes with high data accuracy —
+                    aligning with real-world user data tracking, enabling
+                    traceable insights for engineers and decision-makers.
+                  </li>
+                  <li>
+                    Collaborated with cross-functional teams to support ISO
+                    9001:2015 systems, emphasising design clarity and
+                    consistency.
+                  </li>
+                </ul>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                  <h5>Texas Instruments Electronics Malaysia</h5>
+                  <!-- The `text-muted` class has been removed for better visibility. -->
+                  <small class="text-nowrap">Mar 2021-Jul 2021</small>
+                </div>
+                <!-- The `text-secondary` class has been removed for better visibility. -->
+                <h6>Technician Intern</h6>
+                <ul class="mt-2" style="list-style-type: disc">
+                  <li>
+                    Conducted daily maintenance on 40+ machines die-attach
+                    machines, reducing downtime by 20% and ensuring consistent
+                    operator experience.
+                  </li>
+                  <li>
+                    Installed and aligned 15+ machines for new packages by
+                    interpreting visual diagrams and conducting precise
+                    component setups, improving ease-of-use for operators and
+                    production efficiency by 15%.
+                  </li>
+                  <li>
+                    Proposed layout improvements after observing technician
+                    challenges, streamlining workflow and reducing navigation
+                    errors.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Section - Now with a 3-column layout on large screens -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card p-4" id="projects">
+            <h4 class="card-title text-bold">Project</h4>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
+              <!-- Project 1 -->
+              <div class="col d-flex">
+                <!-- Use a flex column on the project card to push the link to the bottom -->
+                <div
+                  class="project-card d-flex flex-column"
+                  data-bs-toggle="modal"
+                  data-bs-target="#projectModal1"
+                >
+                  <div class="card h-100 d-flex flex-column">
+                    <img
+                      src="asset/project/web.png"
+                      class="card-img-top img-fluid"
+                      alt="Portfolio Website Project"
+                    />
+                    <div class="card-body d-flex flex-column">
+                      <!-- New header section with min-height to standardize vertical positioning -->
+                      <div class="project-card-header mb-2">
+                        <h5 class="card-title mb-0">
+                          Responsive Portfolio Website
+                        </h5>
+                        <small class="text-nowrap">Aug 2025</small>
+                      </div>
+                      <!-- Use flex-grow-1 to make the description expand and push the link down -->
+                      <p class="card-text text-justify flex-grow-1">
+                        Designed and developed a personal portfolio website
+                        using HTML, CSS, and Bootstrap. Implemented responsive
+                        design principles to ensure a seamless experience across
+                        desktop, tablet, and mobile devices. Showcased various
+                        design projects and case studies, highlighting the
+                        end-to-end UX process.
+                      </p>
+                      <div class="text-end mt-auto">
+                        <a
+                          class="more-link"
+                          data-bs-toggle="tooltip"
+                          data-bs-title="View project details"
+                          data-bs-placement="left"
+                          onclick="event.stopPropagation();"
+                        >
+                          More
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 2 -->
+              <div class="col d-flex">
+                <!-- Use a flex column on the project card to push the link to the bottom -->
+                <div
+                  class="project-card d-flex flex-column"
+                  data-bs-toggle="modal"
+                  data-bs-target="#projectModal2"
+                >
+                  <div class="card h-100 d-flex flex-column">
+                    <img
+                      src="asset/project/zerog-model.jpg"
+                      class="card-img-top img-fluid"
+                      alt="Zero-G Harvester"
+                    />
+                    <div class="card-body d-flex flex-column">
+                      <!-- New header section with min-height to standardize vertical positioning -->
+                      <div class="project-card-header mb-2">
+                        <h5 class="card-title mb-0">Zero-G Harvester</h5>
+                        <small class="text-nowrap">Jan 2025</small>
+                      </div>
+                      <!-- Use flex-grow-1 to make the description expand and push the link down -->
+                      <p class="card-text text-justify flex-grow-1">
+                        Designed and prototyped an all-terrain, battery-powered
+                        harvester to reduce worker fatigue and increase
+                        efficiency in the palm oil industry. The ZERO-G
+                        Harvester utilizes a spring balancer to offset the
+                        weight of the motorized cutter, allowing for easy
+                        navigation and improved ergonomics for plantation
+                        workers.
+                      </p>
+                      <div class="text-end mt-auto">
+                        <a
+                          class="more-link"
+                          data-bs-toggle="tooltip"
+                          data-bs-title="View project details"
+                          data-bs-placement="left"
+                          onclick="event.stopPropagation();"
+                        >
+                          More
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 3 -->
+              <div class="col d-flex">
+                <!-- Use a flex column on the project card to push the link to the bottom -->
+                <div
+                  class="project-card d-flex flex-column"
+                  data-bs-toggle="modal"
+                  data-bs-target="#projectModal3"
+                >
+                  <div class="card h-100 d-flex flex-column">
+                    <img
+                      src="asset/project/fyp-talk.jpg"
+                      class="card-img-top img-fluid"
+                      alt="Underwater Colour Correction"
+                    />
+                    <div class="card-body d-flex flex-column">
+                      <!-- New header section with min-height to standardize vertical positioning -->
+                      <div class="project-card-header mb-2">
+                        <h5 class="card-title mb-0">
+                          Underwater Colour Correction for Enhanced Object
+                          Detection
+                        </h5>
+                        <small class="text-nowrap">Feb 2025</small>
+                      </div>
+                      <!-- Use flex-grow-1 to make the description expand and push the link down -->
+                      <p class="card-text text-justify flex-grow-1">
+                        Developed and determined algorithms that uses deep
+                        learning and advanced image processing to enhance
+                        underwater images and improve the accuracy of object
+                        detection. The project compared traditional methods
+                        (CLAHE) with deep learning (CycleGAN) to demonstrate how
+                        restoring color and contrast leads to more effective
+                        object identification in challenging underwater
+                        environments.
+                      </p>
+                      <div class="text-end mt-auto">
+                        <a
+                          class="more-link"
+                          data-bs-toggle="tooltip"
+                          data-bs-title="View project details"
+                          data-bs-placement="left"
+                          onclick="event.stopPropagation();"
+                        >
+                          More
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Skills Section -->
+    <section class="container mb-5" id="skills">
+      <div class="row mb-4">
+        <div class="col-lg-12">
+          <div class="card p-4">
+            <h4 class="card-title text-bold mb-4">Skills</h4>
+
+            <div id="skillsAccordion" class="row gy-4">
+              <!-- UX/UI Design -->
+              <div class="col-md-6">
+                <div class="card p-3">
+                  <div
+                    class="cursor-pointer"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#uxuiDetails"
+                    data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    title="Click to view"
+                  >
+                    <p class="progress-bar-title">UX/UI Design</p>
+                    <div class="progress" style="height: 15px">
+                      <div
+                        class="progress-bar progress-bar-ux"
+                        style="width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="collapse mt-2"
+                    id="uxuiDetails"
+                    data-bs-parent="#skillsAccordion"
+                  >
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Wireframing</span>
+                    <span class="skill-tag">Prototyping</span>
+                    <span class="skill-tag">Information Architecture</span>
+                    <span class="skill-tag">Interaction Design</span>
+                    <span class="skill-tag">Visual Design</span>
+                    <span class="skill-tag">User Flows & Journey Mapping</span>
+                    <span class="skill-tag">Heuristic Evaluation</span>
+                    <span class="skill-tag">Usability Testing</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- HTML / CSS -->
+              <div class="col-md-6">
+                <div class="card p-3">
+                  <div
+                    class="cursor-pointer"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#htmlDetails"
+                    data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    title="Click to view"
+                  >
+                    <p class="progress-bar-title">HTML / CSS</p>
+                    <div class="progress" style="height: 15px">
+                      <div
+                        class="progress-bar progress-bar-tools"
+                        style="width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="collapse mt-2"
+                    id="htmlDetails"
+                    data-bs-parent="#skillsAccordion"
+                  >
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">Responsive Design</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- User Research -->
+              <div class="col-md-6">
+                <div class="card p-3">
+                  <div
+                    class="cursor-pointer"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#researchDetails"
+                    data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    title="Click to view"
+                  >
+                    <p class="progress-bar-title">User Research</p>
+                    <div class="progress" style="height: 15px">
+                      <div
+                        class="progress-bar progress-bar-ux"
+                        style="width: 80%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="collapse mt-2"
+                    id="researchDetails"
+                    data-bs-parent="#skillsAccordion"
+                  >
+                    <span class="skill-tag">Qualitative Research</span>
+                    <span class="skill-tag">Quantitative Research</span>
+                    <span class="skill-tag">User Interviews</span>
+                    <span class="skill-tag">Surveys</span>
+                    <span class="skill-tag">Contextual Inquiries</span>
+                    <span class="skill-tag">Persona Creation</span>
+                    <span class="skill-tag">Usability Testing</span>
+                    <span class="skill-tag">Competitive Analysis</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Data Analytics -->
+              <div class="col-md-6">
+                <div class="card p-3">
+                  <div
+                    class="cursor-pointer"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#gaDetails"
+                    data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    title="Click to view"
+                  >
+                    <p class="progress-bar-title">Data Analytics</p>
+                    <div class="progress" style="height: 15px">
+                      <div
+                        class="progress-bar progress-bar-tools"
+                        style="width: 75%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="collapse mt-2"
+                    id="gaDetails"
+                    data-bs-parent="#skillsAccordion"
+                  >
+                    <span class="skill-tag">Data Collection</span>
+                    <span class="skill-tag">Data Wrangling</span>
+                    <span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">Data Interpretation</span>
+                    <span class="skill-tag">Data Visualization</span>
+                    <span class="skill-tag">Google Sheets</span>
+                    <span class="skill-tag">Google Analytics</span>
+                    <span class="skill-tag">Dashboard Reporting</span>
+                    <span class="skill-tag">Tableau</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mechanical Engineering -->
+              <div class="col-md-6">
+                <div class="card p-3">
+                  <div
+                    class="cursor-pointer"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mechDetails"
+                    data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    title="Click to view"
+                  >
+                    <p class="progress-bar-title">Mechanical Engineering</p>
+                    <div class="progress" style="height: 15px">
+                      <div
+                        class="progress-bar progress-bar-mechanical"
+                        style="width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="collapse mt-2"
+                    id="mechDetails"
+                    data-bs-parent="#skillsAccordion"
+                  >
+                    <span class="skill-tag">CAD</span>
+                    <span class="skill-tag">Prototyping</span>
+                    <span class="skill-tag">Simulation</span>
+                    <span class="skill-tag">Fabrication & Manufacturing</span>
+                    <span class="skill-tag">Product Design</span>
+                    <span class="skill-tag">Robotics</span>
+                    <span class="skill-tag">Mechatronics</span>
+                    <span class="skill-tag">Thermodynamics</span>
+                    <span class="skill-tag">FEA Analysis</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quality Assurance -->
+              <div class="col-md-6">
+                <div class="card p-3">
+                  <div
+                    class="cursor-pointer"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#qaDetails"
+                    data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    title="Click to view"
+                  >
+                    <p class="progress-bar-title">Quality Assurance</p>
+                    <div class="progress" style="height: 15px">
+                      <div
+                        class="progress-bar progress-bar-mechanical"
+                        style="width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="collapse mt-2"
+                    id="qaDetails"
+                    data-bs-parent="#skillsAccordion"
+                  >
+                    <span class="skill-tag">Visual Inspection</span>
+                    <span class="skill-tag">Dimensional Evaluation</span>
+                    <span class="skill-tag">ISO 9001</span>
+                    <span class="skill-tag">Lean Six Sigma</span>
+                    <span class="skill-tag">Testing</span>
+                    <span class="skill-tag">Defect Analysis</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Technical Documentation -->
+              <div class="col-md-6">
+                <div class="card p-3">
+                  <div
+                    class="cursor-pointer"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#docDetails"
+                    data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    title="Click to view"
+                  >
+                    <p class="progress-bar-title">Technical Documentation</p>
+                    <div class="progress" style="height: 15px">
+                      <div
+                        class="progress-bar progress-bar-mechanical"
+                        style="width: 80%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="collapse mt-2"
+                    id="docDetails"
+                    data-bs-parent="#skillsAccordion"
+                  >
+                    <span class="skill-tag">Reports</span>
+                    <span class="skill-tag">Manuals</span>
+                    <span class="skill-tag">Process Flow</span>
+                    <span class="skill-tag">Drawings</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Soft Skills -->
+              <div class="col-md-6">
+                <div class="card p-3">
+                  <div
+                    class="cursor-pointer"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#softSkillsDetails"
+                    data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    title="Click to view"
+                  >
+                    <p class="progress-bar-title">Soft Skills</p>
+                    <div class="progress" style="height: 15px">
+                      <div
+                        class="progress-bar progress-bar-soft"
+                        style="width: 85%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="collapse mt-2"
+                    id="softSkillsDetails"
+                    data-bs-parent="#skillsAccordion"
+                  >
+                    <span class="skill-tag">Problem-Solving</span>
+                    <span class="skill-tag">Critical Thinking</span>
+                    <span class="skill-tag">Team Collaboration</span>
+                    <span class="skill-tag">Adaptability</span>
+                    <span class="skill-tag">Time Management</span>
+                    <span class="skill-tag">Communication</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end skillsAccordion -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section class="container mb-5" id="contact">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card p-4 text-center">
+            <h4 class="card-title text-bold mb-4">Get in Touch!</h4>
+            <p class="mb-4">
+              Feel free to reach out to me on my social media accounts below.
+            </p>
+            <!-- Social media icons for the contact section -->
+            <div class="d-flex justify-content-center">
+              <a
+                href="https://www.linkedin.com/in/fatin-04-20/"
+                target="_blank"
+                class="text-light mx-3"
+                aria-label="LinkedIn Profile"
+                style="color: var(--text-color) !important"
+              >
+                <i class="fab fa-linkedin fa-2x"></i>
+              </a>
+              <a
+                href="https://github.com/fatin-idris"
+                target="_blank"
+                class="text-light mx-3"
+                aria-label="GitHub Profile"
+                style="color: var(--text-color) !important"
+              >
+                <i class="fab fa-github fa-2x"></i>
+              </a>
+              <a
+                href="mailto:norfatinhazirahmohdidris@yahoo.com"
+                target="_blank"
+                class="text-light mx-3"
+                aria-label="Email"
+                style="color: var(--text-color) !important"
+              >
+                <i class="fas fa-envelope fa-2x"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+      <div class="container">
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center"
+        >
+          <!-- Copyright text -->
+          <div class="mb-3 mb-md-0">
+            &copy; 2025 Fatin Idris. All rights reserved.
+          </div>
+          <!-- Social media icons in the footer -->
+          <div class="d-flex">
+            <a
+              href="https://www.linkedin.com/in/fatin-04-20/"
+              target="_blank"
+              class="text-white mx-2"
+              aria-label="LinkedIn"
+              style="color: var(--text-color) !important"
+            >
+              <i class="fab fa-linkedin fa-lg"></i>
+            </a>
+            <a
+              href="https://github.com/fatin-idris"
+              target="_blank"
+              class="text-white mx-2"
+              aria-label="GitHub Profile"
+              style="color: var(--text-color) !important"
+            >
+              <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a
+              href="mailto:norfatinhazirahmohdidris@yahoo.com"
+              target="_blank"
+              class="text-white mx-2"
+              aria-label="Email"
+              style="color: var(--text-color) !important"
+            >
+              <i class="fas fa-envelope fa-lg"></i>
+            </a>
+            <a
+              href="https://calendly.com/norfatinhazirahmohdidris"
+              target="_blank"
+              class="text-white mx-2"
+              aria-label="Book an Appointment"
+              style="color: var(--text-color) !important"
+            >
+              <i class="fas fa-calendar-check fa-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Search message popup -->
+    <div id="searchMessage"></div>
+
+    <!-- Calendly toast container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="calendlyToast"
+        class="toast calendly-toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-autohide="false"
+      >
+        <div class="toast-body">
+          <div class="d-flex align-items-center mb-1">
+            <!-- Updated to use text-white class for better visibility -->
+            <i class="fas fa-calendar-check me-2 text-white"></i>
+            <strong class="me-auto text-white"
+              >Looking for a passionate engineer?</strong
+            >
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div>
+            <a
+              href="https://calendly.com/norfatinhazirahmohdidris"
+              target="_blank"
+              class="text-white"
+              ><em><u>Book</u></em> a quick call with me.</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modals for each project to show detailed content -->
+
+    <!-- Modal 1: Responsive Portfolio Website -->
+    <div
+      class="modal fade"
+      id="projectModal1"
+      tabindex="-1"
+      aria-labelledby="projectModal1Label"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div
+          class="modal-content"
+          style="background-color: var(--bg-secondary)"
+        >
+          <div class="modal-header">
+            <h5 class="modal-title" id="projectModal1Label">
+              Responsive Portfolio Website
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Project Hero Image Section -->
+            <div class="modal-hero-img-container mb-4">
+              <img
+                src="asset/project/web.png"
+                class="img-fluid"
+                alt="Portfolio Website Project Hero"
+              />
+            </div>
+            <!-- Project Details Section -->
+            <div class="row">
+              <!-- Project Overview Column -->
+              <div class="col-12 col-md-4 mb-4">
+                <div class="card p-4 h-100">
+                  <h4 class="text-bold mb-3">Project Overview</h4>
+                  <ul class="list-unstyled overview-list">
+                    <li>
+                      <h6 class="text-bold">My Role:</h6>
+                      <p class="mb-0">UX/UI Designer</p>
+                    </li>
+                    <li>
+                      <h6 class="text-bold">Team Size:</h6>
+                      <p class="mb-0">Individual Project</p>
+                    </li>
+                    <li>
+                      <h6 class="text-bold">Tools:</h6>
+                      <p class="mb-0">VS Code, Bootstrap</p>
+                    </li>
+                    <li>
+                      <h6 class="text-bold">Duration:</h6>
+                      <p class="mb-0">2 Weeks</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- The Challenge & My Role Column -->
+              <div class="col-12 col-md-8 mb-4">
+                <div class="card p-4 h-100">
+                  <h4 class="text-bold mb-3">Details</h4>
+                  <p class="text-justify">
+                    In this project, I set out to design and build a personal
+                    portfolio website from scratch. The primary challenge was to
+                    create a modern, clean, and fully responsive site that
+                    effectively showcases my UX/UI skills and highlights my case
+                    studies. I focused on building the site with clean, semantic
+                    code using HTML, CSS, and the Bootstrap framework.
+                  </p>
+                  <p class="text-justify mb-0">
+                    My goal was to ensure the site was not only visually
+                    appealing but also easy to navigate on any device, providing
+                    a seamless experience for recruiters and potential
+                    collaborators. This required me to constantly balance the
+                    visual design with technical feasibility. I had to ensure
+                    the site's layout and components were not only aesthetically
+                    pleasing but also fully responsive and functional on
+                    different screen sizes without compromising performance.
+                    Additionally, the tight two-week deadline meant I had to
+                    manage my time effectively and prioritize tasks to complete
+                    the project successfully.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- New Skills Section -->
+            <div class="row mt-4">
+              <div class="col-12">
+                <div class="card p-4 h-100">
+                  <h4 class="text-bold mb-3">Skills</h4>
+                  <div>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">Web Development</span>
+                    <span class="skill-tag">UI/UX Design</span>
+                    <span class="skill-tag">Prototyping</span>
+                    <span class="skill-tag">Visual Design</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2: E-commerce Redesign -->
+    <div
+      class="modal fade"
+      id="projectModal2"
+      tabindex="-1"
+      aria-labelledby="projectModal2Label"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div
+          class="modal-content"
+          style="background-color: var(--bg-secondary)"
+        >
+          <div class="modal-header">
+            <h5 class="modal-title" id="projectModal2Label">
+              All-Terrain ZERO-Gravity Harvester
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Project Hero Image Section -->
+            <div class="modal-hero-img-container mb-4">
+              <img
+                src="asset/project/zerog-usage.png"
+                class="img-fluid"
+                alt="ZERO-Gravity Harvester"
+              />
+            </div>
+            <!-- Project Details Section -->
+            <div class="row">
+              <!-- Project Overview Column -->
+              <div class="col-12 col-md-4 mb-4">
+                <div class="card p-4 h-100">
+                  <h4 class="text-bold mb-3">Project Overview</h4>
+                  <ul class="list-unstyled overview-list">
+                    <li>
+                      <h6 class="text-bold">My Role:</h6>
+                      <p class="mb-0">Group Leader</p>
+                    </li>
+                    <li>
+                      <h6 class="text-bold">Team Size:</h6>
+                      <p class="mb-0">Group Project - 12 members</p>
+                    </li>
+                    <li>
+                      <h6 class="text-bold">Tools:</h6>
+                      <p class="mb-0">Inventor, Fusion360, Blender</p>
+                    </li>
+                    <li>
+                      <h6 class="text-bold">Duration:</h6>
+                      <p class="mb-0">12 months</p>
+                    </li>
+                  </ul>
+                  <!-- New section for the achievement -->
+                  <h4 class="text-bold mb-3 mt-3">Achievements</h4>
+                  <p>
+                    Awarded Silver Medal at the National Agricultural & Food
+                    Engineering Convention (NAFEC 2025)
+                  </p>
+                </div>
+              </div>
+
+              <!-- The Challenge & My Role Column -->
+              <div class="col-12 col-md-8 mb-4">
+                <div class="card p-4 h-100">
+                  <h4 class="text-bold mb-3">Details</h4>
+                  <p class="text-justify">
+                    As a key member of the team, I was responsible for Project
+                    Planning and Design. My responsibilities included creating
+                    the project timeline and milestones, and I was deeply
+                    involved in designing the mobile chassis and steering
+                    system. I also contributed to developing the technical
+                    specifications, working closely with the team to ensure the
+                    prototype met our performance and safety goals.
+                  </p>
+                  <p class="text-justify mb-0">
+                    One of the primary challenges was designing a system that
+                    effectively supported the weight of the motorized cutter
+                    while maintaining maneuverability in diverse terrain. We had
+                    to meticulously calculate and integrate the spring balancer
+                    with the cutter holder to achieve the "zero-gravity" effect
+                    without restricting the user's movement. Another significant
+                    challenge was balancing the technical specifications, such
+                    as power, range, and speed, with the project's budget to
+                    produce a functional and cost-effective prototype.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- New Skills Section -->
+            <div class="row mt-4">
+              <div class="col-12">
+                <div class="card p-4 h-100">
+                  <h4 class="text-bold mb-3">Skills</h4>
+                  <div>
+                    <span class="skill-tag">CAD software</span>
+                    <span class="skill-tag">Mechanical Design</span>
+                    <span class="skill-tag">Prototyping</span>
+                    <span class="skill-tag">Fabrication & Manufacturing</span>
+                    <span class="skill-tag">Robotics</span>
+                    <span class="skill-tag">Mechatronics</span>
+                    <span class="skill-tag">System Integration</span>
+                    <span class="skill-tag">User Research</span>
+                    <span class="skill-tag">User Testing</span>
+                    <span class="skill-tag">Project Management</span>
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">Research & Analysis</span>
+                    <span class="skill-tag">Technical Documentation</span>
+                    <span class="skill-tag">Experimentation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3: Task Management App -->
+    <div
+      class="modal fade"
+      id="projectModal3"
+      tabindex="-1"
+      aria-labelledby="projectModal3Label"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div
+          class="modal-content"
+          style="background-color: var(--bg-secondary)"
+        >
+          <div class="modal-header">
+            <h5 class="modal-title" id="projectModal3Label">
+              Underwater Colour Correction for Enhanced Object Detection
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Project Hero Image Section -->
+            <div class="modal-hero-img-container mb-4">
+              <img
+                src="asset/project/fyp-best-project.jpg"
+                class="img-fluid"
+                alt="Underwater Colour Correction"
+              />
+            </div>
+            <!-- Project Details Section -->
+            <div class="row">
+              <!-- Project Overview Column -->
+              <div class="col-12 col-md-4 mb-4">
+                <div class="card p-4 h-100">
+                  <h4 class="text-bold mb-3">Project Overview</h4>
+                  <ul class="list-unstyled overview-list">
+                    <li>
+                      <h6 class="text-bold">My Role:</h6>
+                      <p class="mb-0">Individual Research</p>
+                    </li>
+                    <li>
+                      <h6 class="text-bold">Team Size:</h6>
+                      <p class="mb-0">Individual Project</p>
+                    </li>
+                    <li>
+                      <h6 class="text-bold">Tools:</h6>
+                      <p class="mb-0">Python, Google Colab, Github, Kaggle</p>
+                    </li>
+                    <li>
+                      <h6 class="text-bold">Duration:</h6>
+                      <p class="mb-0">12 months</p>
+                    </li>
+                  </ul>
+                  <!-- New section for the achievement -->
+                  <h4 class="text-bold mb-3 mt-3">Achievements</h4>
+                  <p>
+                    Awarded Best FYP2 Project at the Malaysia-Japan
+                    International Institue of Malaysia (MJIIT) Final Year
+                    Project Symposium (2024/2025)
+                  </p>
+                </div>
+              </div>
+              <!-- The Challenge & My Role Column -->
+              <div class="col-12 col-md-8 mb-4">
+                <div class="card p-4 h-100">
+                  <h4 class="text-bold mb-3">Details</h4>
+                  <p class="text-justify">
+                    This was an individual research for my final year project,
+                    where I was responsible for the entire process, from
+                    literature review and methodology design to implementation
+                    and analysis. I acted as the researcher, developer, and data
+                    analyst. My key responsibilities included determined and
+                    implementing the image enhancement pipeline using targeted
+                    algorithms, including the CycleGAN model. Training the YOLO
+                    object detection model on the enhanced datasets. Conducting
+                    a comprehensive evaluation of the system's performance using
+                    relevant metrics. Documenting the entire process and
+                    analyzing the results in a detailed research report.
+                  </p>
+                  <p class="text-justify mb-0">
+                    The main challenge was effectively addressing the visual
+                    degradation specific to underwater environments and ensuring
+                    the chosen enhancement method was optimized for object
+                    detection. This required a deep understanding of multiple
+                    machine learning models and careful analysis to prove that a
+                    color-corrected image truly improved the detection accuracy.
+                    A key part of the process was meticulously preparing and
+                    annotating the underwater image dataset to ensure the models
+                    were trained on high-quality data.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- New Skills Section -->
+            <div class="row mt-4">
+              <div class="col-12">
+                <div class="card p-4 h-100">
+                  <h4 class="text-bold mb-3">Skills</h4>
+                  <div>
+                    <span class="skill-tag">YOLO (You Only Look Once)</span>
+                    <span class="skill-tag">CycleGAN</span>
+                    <span class="skill-tag">Image Processing</span>
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">Usability Testing</span>
+                    <span class="skill-tag">Object Detection</span>
+                    <span class="skill-tag">Neural Networks</span>
+                    <span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">Image Enhancement</span>
+                    <span class="skill-tag">Usability Testing</span>
+                    <span class="skill-tag">Academic Research</span>
+                    <span class="skill-tag">Technical Documentation</span>
+                    <span class="skill-tag">Experimentation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Bundle with Popper for components like navbar and dropdowns -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      xintegrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JavaScript for skills collapsing and navbar closing -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const skillsSection = document.getElementById("skillsAccordion");
+        if (!skillsSection) return;
+
+        // outside click: close all open collapses
+        document.addEventListener("click", function (e) {
+          if (!skillsSection.contains(e.target)) {
+            const openCollapses =
+              skillsSection.querySelectorAll(".collapse.show");
+            openCollapses.forEach((c) => {
+              const inst = bootstrap.Collapse.getInstance(c);
+              if (inst) inst.hide();
+            });
+          }
+        });
+
+        // This is the new script to close the navbar on link click
+        const dropdownLinks = document.querySelectorAll(
+          ".dropdown-menu .dropdown-item"
+        );
+        const navbarCollapse = document.getElementById(
+          "navbarSupportedContent"
+        );
+        const navbarToggler = document.querySelector(".navbar-toggler");
+
+        dropdownLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            // Check if the navbar is currently open (on mobile)
+            if (navbarCollapse.classList.contains("show")) {
+              navbarToggler.click(); // Programmatically trigger a click to close it
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- JavaScript for search functionality -->
+    <script>
+      const searchForm = document.getElementById("searchForm");
+      const mainContent = document.querySelector("main");
+      const searchInput = document.getElementById("searchInput");
+      const searchMessageEl = document.getElementById("searchMessage");
+
+      searchForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const query = searchInput.value.trim();
+
+        if (!query) {
+          removeHighlights();
+          hideSearchMessage();
+          return;
+        }
+
+        const matchCount = highlightText(query);
+        showSearchMessage(matchCount);
+
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.getElementById(
+          "navbarSupportedContent"
+        );
+
+        if (navbarToggler.offsetParent !== null) {
+          if (navbarCollapse.classList.contains("show")) {
+            navbarToggler.click();
+          }
+        }
+      });
+
+      function showSearchMessage(count) {
+        if (count > 0) {
+          searchMessageEl.textContent = `${count} matches found.`;
+        } else {
+          searchMessageEl.textContent = "No matches found.";
+        }
+        searchMessageEl.classList.add("show");
+        setTimeout(hideSearchMessage, 3000);
+      }
+
+      function hideSearchMessage() {
+        searchMessageEl.classList.remove("show");
+      }
+
+      function removeHighlights() {
+        const highlightedElements = document.querySelectorAll(".highlight");
+        highlightedElements.forEach((el) => {
+          const parent = el.parentNode;
+          while (el.firstChild) parent.insertBefore(el.firstChild, el);
+          parent.removeChild(el);
+          parent.normalize();
+        });
+      }
+
+      function highlightText(text) {
+        removeHighlights();
+        let matchCount = 0;
+        const regex = new RegExp(text, "gi");
+        let firstHighlightFound = false;
+
+        const walker = document.createTreeWalker(
+          mainContent,
+          NodeFilter.SHOW_TEXT,
+          {
+            acceptNode: function (node) {
+              const parentTag = node.parentNode.tagName.toLowerCase();
+              return parentTag !== "script" && parentTag !== "style"
+                ? NodeFilter.FILTER_ACCEPT
+                : NodeFilter.FILTER_REJECT;
+            },
+          }
+        );
+
+        let node;
+        while ((node = walker.nextNode())) {
+          const originalText = node.nodeValue;
+          const matches = originalText.match(regex);
+          if (matches) {
+            matchCount += matches.length;
+            const newContent = originalText.replace(regex, function (match) {
+              if (!firstHighlightFound) {
+                firstHighlightFound = true;
+                return `<span class="highlight first-highlight">${match}</span>`;
+              }
+              return `<span class="highlight">${match}</span>`;
+            });
+
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = newContent;
+
+            while (tempDiv.firstChild) {
+              node.parentNode.insertBefore(tempDiv.firstChild, node);
+            }
+            node.parentNode.removeChild(node);
+          }
+        }
+
+        const firstHighlightElement =
+          document.querySelector(".first-highlight");
+        if (firstHighlightElement) {
+          firstHighlightElement.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        }
+        return matchCount;
+      }
+    </script>
+
+    <!-- JavaScript for tooltips -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize tooltips for the skills section
+        const skillsTooltipTriggerList = [].slice.call(
+          document.querySelectorAll("[data-bs-custom-class]")
+        );
+        skillsTooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl, {
+            trigger: "hover",
+            container: "body",
+          });
+        });
+
+        // Initialize tooltips for the "More" links only
+        const moreLinkTooltipTriggerList = [].slice.call(
+          document.querySelectorAll(".more-link")
+        );
+        moreLinkTooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+        // New JavaScript for the Calendly toast
+        const calendlyToastEl = document.getElementById("calendlyToast");
+        const skillsSection = document.getElementById("skills");
+        const contactSection = document.getElementById("contact");
+        if (calendlyToastEl && skillsSection && contactSection) {
+          const calendlyToast = new bootstrap.Toast(calendlyToastEl);
+          let isToastVisible = false;
+          let lastScrollY = window.scrollY;
+
+          window.addEventListener("scroll", () => {
+            const currentScrollY = window.scrollY;
+
+            // Check if scrolling down
+            if (currentScrollY > lastScrollY) {
+              const skillsRect = skillsSection.getBoundingClientRect();
+              const contactRect = contactSection.getBoundingClientRect();
+
+              // Check if the skills or contact section is visible in the viewport
+              const isSkillsVisible =
+                skillsRect.top <= window.innerHeight && skillsRect.bottom >= 0;
+              const isContactVisible =
+                contactRect.top <= window.innerHeight &&
+                contactRect.bottom >= 0;
+
+              if ((isSkillsVisible || isContactVisible) && !isToastVisible) {
+                calendlyToast.show();
+                isToastVisible = true;
+              }
+            }
+            lastScrollY = currentScrollY;
+          });
+
+          // Reset the state when the toast is hidden (e.g., when the user closes it)
+          calendlyToastEl.addEventListener("hidden.bs.toast", () => {
+            isToastVisible = false;
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
