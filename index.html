@@ -732,11 +732,52 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+
+<!-- Project 4 -->
+<div class="col d-flex">
+  <!-- Use a flex column on the project card to push the link to the bottom -->
+  <div
+    class="project-card d-flex flex-column"
+    data-bs-toggle="modal"
+    data-bs-target="#projectModal4"
+  >
+    <div class="card h-100 d-flex flex-column">
+      <img
+        src="asset/project/vba-dashboard.jpg"
+        class="card-img-top img-fluid"
+        alt="Excel VBA Macro for IPQC & OQC Data Management"
+      />
+      <div class="card-body d-flex flex-column">
+        <!-- New header section with min-height to standardize vertical positioning -->
+        <div class="project-card-header mb-2">
+          <h5 class="card-title mb-0">
+            Excel VBA Macro for IPQC & OQC Data Management
+          </h5>
+          <small class="text-nowrap">July 2024</small>
+        </div>
+        <!-- Use flex-grow-1 to make the description expand and push the link down -->
+        <p class="card-text text-justify flex-grow-1">
+          Developed an Excel-based automation system using VBA to manage
+          In-Process (IPQC) and Outgoing Quality Control (OQC) data.
+          The UserForm automates data entry validation, dynamic filtering,
+          and inspection record management — streamlining workflow for
+          the quality control department during production.
+        </p>
+        <div class="text-end mt-auto">
+          <a
+            class="more-link"
+            data-bs-toggle="tooltip"
+            data-bs-title="View project details"
+            data-bs-placement="left"
+            onclick="event.stopPropagation();"
+          >
+            More
+          </a>
         </div>
       </div>
-    </main>
+    </div>
+  </div>
+</div>
 
     <!-- Skills Section -->
     <section class="container mb-5" id="skills">
@@ -1754,5 +1795,6 @@
     </script>
   </body>
 </html>
+
 
 
