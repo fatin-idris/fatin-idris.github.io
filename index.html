@@ -291,7 +291,7 @@
 
       /* Added CSS to ensure the hamburger icon is visible */
       .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3csvg%3e") !important;
       }
 
       /* New class to ensure the project card header has a consistent height */
@@ -584,12 +584,13 @@
         </div>
       </div>
 
-      <!-- Project Section - Now with a 3-column layout on large screens -->
-      <div class="row">
+      <!-- Project Section -->
+      <div class="row mb-4">
         <div class="col-lg-12">
           <div class="card p-4" id="projects">
             <h4 class="card-title text-bold">Project</h4>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
+            <!-- MODIFIED CLASS: row-cols-lg-2 for 2x2 layout on desktop and larger screens -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4 mt-3">
               <!-- Project 1 -->
               <div class="col d-flex">
                 <!-- Use a flex column on the project card to push the link to the bottom -->
@@ -733,55 +734,60 @@
                 </div>
               </div>
 
-<!-- Project 4 -->
-<div class="col d-flex">
-  <!-- Use a flex column on the project card to push the link to the bottom -->
-  <div
-    class="project-card d-flex flex-column"
-    data-bs-toggle="modal"
-    data-bs-target="#projectModal4"
-  >
-    <div class="card h-100 d-flex flex-column">
-      <img
-        src="asset/project/vba-dashboard.jpg"
-        class="card-img-top img-fluid"
-        alt="Excel VBA Macro for IPQC & OQC Data Management"
-      />
-      <div class="card-body d-flex flex-column">
-        <!-- New header section with min-height to standardize vertical positioning -->
-        <div class="project-card-header mb-2">
-          <h5 class="card-title mb-0">
-            Excel VBA Macro for IPQC & OQC Data Management
-          </h5>
-          <small class="text-nowrap">July 2024</small>
-        </div>
-        <!-- Use flex-grow-1 to make the description expand and push the link down -->
-        <p class="card-text text-justify flex-grow-1">
-          Developed an Excel-based automation system using VBA to manage
-          In-Process (IPQC) and Outgoing Quality Control (OQC) data.
-          The UserForm automates data entry validation, dynamic filtering,
-          and inspection record management — streamlining workflow for
-          the quality control department during production.
-        </p>
-        <div class="text-end mt-auto">
-          <a
-            class="more-link"
-            data-bs-toggle="tooltip"
-            data-bs-title="View project details"
-            data-bs-placement="left"
-            onclick="event.stopPropagation();"
-          >
-            More
-          </a>
+              <!-- Project 4 -->
+              <div class="col d-flex">
+                <!-- Use a flex column on the project card to push the link to the bottom -->
+                <div
+                  class="project-card d-flex flex-column"
+                  data-bs-toggle="modal"
+                  data-bs-target="#projectModal4"
+                >
+                  <div class="card h-100 d-flex flex-column">
+                    <img
+                      src="asset/project/vba-dashboard.jpg"
+                      class="card-img-top img-fluid"
+                      alt="Excel VBA Macro for IPQC & OQC Data Management"
+                    />
+                    <div class="card-body d-flex flex-column">
+                      <!-- New header section with min-height to standardize vertical positioning -->
+                      <div class="project-card-header mb-2">
+                        <h5 class="card-title mb-0">
+                          Excel VBA Macro for IPQC & OQC Data Management
+                        </h5>
+                        <small class="text-nowrap">July 2024</small>
+                      </div>
+                      <!-- Use flex-grow-1 to make the description expand and push the link down -->
+                      <p class="card-text text-justify flex-grow-1">
+                        Developed an Excel-based automation system using VBA to
+                        manage In-Process (IPQC) and Outgoing Quality Control
+                        (OQC) data. The UserForm automates data entry
+                        validation, dynamic filtering, and inspection record
+                        management — streamlining workflow for the quality
+                        control department during production.
+                      </p>
+                      <div class="text-end mt-auto">
+                        <a
+                          class="more-link"
+                          data-bs-toggle="tooltip"
+                          data-bs-title="View project details"
+                          data-bs-placement="left"
+                          onclick="event.stopPropagation();"
+                        >
+                          More
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+      <!-- END OF PROJECTS SECTION -->
 
-    <!-- Skills Section -->
-    <section class="container mb-5" id="skills">
-      <div class="row mb-4">
+      <!-- Skills Section -->
+      <div class="row mb-4" id="skills">
         <div class="col-lg-12">
           <div class="card p-4">
             <h4 class="card-title text-bold mb-4">Skills</h4>
@@ -1074,11 +1080,10 @@
           </div>
         </div>
       </div>
-    </section>
+      <!-- END OF SKILLS SECTION -->
 
-    <!-- Contact Me Section -->
-    <section class="container mb-5" id="contact">
-      <div class="row justify-content-center">
+      <!-- Contact Me Section -->
+      <div class="row mb-5 justify-content-center" id="contact">
         <div class="col-lg-8">
           <div class="card p-4 text-center">
             <h4 class="card-title text-bold mb-4">Get in Touch with Me!</h4>
@@ -1118,7 +1123,8 @@
           </div>
         </div>
       </div>
-    </section>
+      <!-- END OF CONTACT SECTION -->
+    </main>
 
     <!-- Footer -->
     <footer class="footer-section">
@@ -1576,6 +1582,127 @@
       </div>
     </div>
 
+    <!-- START MODAL 4: Excel VBA Macro for IPQC & OQC Data Management -->
+    <div
+      class="modal fade"
+      id="projectModal4"
+      tabindex="-1"
+      aria-labelledby="projectModal4Label"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div
+          class="modal-content"
+          style="background-color: var(--bg-secondary)"
+        >
+          <div class="modal-header">
+            <h5 class="modal-title" id="projectModal4Label">
+              Excel VBA Macro for IPQC & OQC Data Management
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Project Hero Image Section -->
+            <div class="modal-hero-img-container mb-4">
+              <img
+                src="asset/project/vba-dashboard.jpg"
+                class="img-fluid"
+                alt="VBA Macro Dashboard"
+              />
+            </div>
+            <!-- Project Details Section -->
+            <div class="row">
+              <!-- Project Overview Column -->
+              <div class="col-12 col-md-4 mb-4">
+                <div class="card p-4 h-100">
+                  <h4 class="text-bold mb-3">Project Overview</h4>
+                  <ul class="list-unstyled overview-list">
+                    <li>
+                      <h6 class="text-bold">My Role:</h6>
+                      <p class="mb-0">Quality Assurance Automation Developer</p>
+                    </li>
+                    <li>
+                      <h6 class="text-bold">Team Size:</h6>
+                      <p class="mb-0">Individual Project (Internship)</p>
+                    </li>
+                    <li>
+                      <h6 class="text-bold">Tools:</h6>
+                      <p class="mb-0">Microsoft Excel, VBA, UserForm</p>
+                    </li>
+                    <li>
+                      <h6 class="text-bold">Duration:</h6>
+                      <p class="mb-0">1 Month</p>
+                    </li>
+                  </ul>
+                  <!-- Achievement -->
+                  <h4 class="text-bold mb-3 mt-3">Impact</h4>
+                  <p>
+                    Improved data integrity and consistency for Quality Control
+                    records, reducing manual data entry errors by an estimated
+                    **30%**.
+                  </p>
+                </div>
+              </div>
+
+              <!-- The Challenge & My Role Column -->
+              <div class="col-12 col-8 mb-4">
+                <div class="card p-4 h-100">
+                  <h4 class="text-bold mb-3">Details</h4>
+                  <p class="text-justify">
+                    This project was initiated during my Quality Engineering
+                    internship to address the poor **usability** and high error
+                    rate associated with manual In-Process Quality Control (IPQC)
+                    and Outgoing Quality Control (OQC) data logging in plain
+                    Excel sheets. Inspectors were prone to typos, inconsistent
+                    formatting, and missing critical fields, which jeopardized
+                    data **traceability** and decision-making.
+                  </p>
+                  <p class="text-justify mb-0">
+                    My solution was to design and implement an **intuitive VBA
+                    UserForm** interface. This form acted as a simplified data
+                    input layer, enforcing strict data validation through
+                    dropdowns, input masks, and mandatory fields. This UX-driven
+                    approach immediately reduced inspector cognitive load and
+                    eliminated most human errors. The macro also automated the
+                    process of stamping records with timestamps and inspector IDs,
+                    and included a dynamic filtering dashboard for quick retrieval
+                    of past records, transforming a cumbersome data management
+                    process into a **streamlined, reliable system**.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- New Skills Section -->
+            <div class="row mt-4">
+              <div class="col-12">
+                <div class="card p-4 h-100">
+                  <h4 class="text-bold mb-3">Skills</h4>
+                  <div>
+                    <span class="skill-tag">VBA (Visual Basic for Applications)</span>
+                    <span class="skill-tag">Excel Automation</span>
+                    <span class="skill-tag">Data Validation</span>
+                    <span class="skill-tag">UserForm Design (UI/UX)</span>
+                    <span class="skill-tag">Quality Control (QC)</span>
+                    <span class="skill-tag">Process Improvement</span>
+                    <span class="skill-tag">Technical Documentation</span>
+                    <span class="skill-tag">Data Management</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END MODAL 4 -->
+
     <!-- Bootstrap JavaScript Bundle with Popper for components like navbar and dropdowns -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
@@ -1795,6 +1922,3 @@
     </script>
   </body>
 </html>
-
-
-
